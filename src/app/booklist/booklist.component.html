@@ -1,0 +1,23 @@
+<html>
+
+<body>
+    <table style="width:50%">
+        <tr>
+            <th>Book ID</th>
+            <th>Book Name</th>
+            <th>Book Price</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let book of books">
+            <td>{{book.bookId}}</td>
+            <td>{{book.bookName}}</td>
+            <td>{{book.bookPrice | currency:'INR'}}</td>
+            <td>
+                <button style="margin-left: 5%;"type="submit" (click)="editBook(book)">Edit</button>
+                <button style="margin-left: 5%;" type="submit" (click)="deleteBook(book)">Delete</button>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

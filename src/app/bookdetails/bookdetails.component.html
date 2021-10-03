@@ -1,0 +1,25 @@
+<html>
+
+<body>
+    <form #bookForm="ngForm">
+
+        <div>
+            <input placeholder="Enter Book Name..." type="text" id="bookName" name="bookName" [(ngModel)] = "book.bookName" />
+        </div>
+        <br/>
+        <div>
+            <input placeholder="Enter Book Price..." type="text" id="bookPrice" name="bookPrice" [(ngModel)] = "book.bookPrice" />
+        </div>        
+        <div>
+            <input type="hidden" id="bookId" name="bookId" [(ngModel)] = "book.bookId" />
+        </div>
+        <br/>
+        <div>
+            <button *ngIf="!isEdit" type="submit" (click)="saveBook(bookForm)">Save</button>
+            <button *ngIf="isEdit" type="submit" (click)="updateBook(bookForm)">Update</button>
+        </div>
+
+    </form>
+</body>
+
+</html>
